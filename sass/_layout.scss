@@ -1,0 +1,63 @@
+@use 'stars'as *;
+@use 'media';
+
+@mixin layout{
+    .page {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100%;
+        grid-template-areas: 'left right';
+        gap: 0px;
+    
+        @include media.small {
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 'left''right';
+        }
+    
+        // div{
+        //     border: 1px solid red;
+        // }
+    
+        #left,
+        #right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+    
+            .bg-effect {
+                position: absolute;
+                left: 0;
+                top: 0;
+                @include stars;
+            }
+        }
+    
+        #left {
+            grid-area: left;
+            background: radial-gradient(ellipse at bottom, #321b35 0%, #0f090f 100%);
+            .ver{
+                a{
+                    color: rgba($color: #d758db, $alpha: 1.0);
+                }
+            }
+    
+        }
+    
+        #right {
+            grid-area: right;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            .ver{
+                a{
+                    color: rgba($color: #538fd3, $alpha: 1.0);
+                }
+            }
+        }
+    
+    
+    }
+}

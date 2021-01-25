@@ -1,0 +1,117 @@
+@use 'media';
+$name-font-size: 5rem;
+$content-font-size: 1.25rem;
+
+@mixin card{
+    .card {
+        z-index: 1;
+        box-shadow: 0 2px 20px rgba($color: #ffffff, $alpha: .54);
+        padding: 2em;
+        border-radius: 1.5em;
+        background-color: rgba($color: #ffffff, $alpha: .9);
+        -webkit-user-select: none;
+        text-align: center;
+        width: 35em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
+        cursor: pointer;
+        @include media.large{
+            width: 25em;
+        }
+        @include media.medium{
+            width: 20em;
+        }
+        @include media.extra-small{
+            width: 18em;
+        }
+        @include media.super-small{
+            width: 14em;
+        }
+
+        .name {
+            font-size: $name-font-size;
+            margin-bottom: .8rem;
+            @include media.large{
+                font-size: $name-font-size/1.5;
+            }
+            @include media.medium{
+                font-size: $name-font-size/1.8;
+            }
+            @include media.extra-small{
+                font-size: $name-font-size/2;
+            }
+            @include media.super-small{
+                font-size: $name-font-size/2.5;
+            }
+        }
+
+        .content {
+            font-size: $content-font-size;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @include media.medium{
+                font-size: $content-font-size/1.3;
+            }
+            @include media.small{
+                font-size: $content-font-size/1.4;
+            }
+            @include media.extra-small{
+                font-size: $content-font-size/1.5;
+            }
+            @include media.super-small{
+                font-size: $content-font-size/1.8;
+            }
+            .day-hour {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .day,
+                .hour,
+                .minute,
+                .second {
+                    margin-right: .5em;
+                    margin-left: .5em;
+                }
+
+                .hour,
+                .minute,
+                .second {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #000;
+                    border-radius: .5em;
+                    padding: .2em;
+                    width: 2.5em;
+                    height: 2.5em;
+                    color: #ffffff;
+                }
+            }
+
+            .date {
+                font-size: $content-font-size/1.2;
+                margin-top: 1.5em;
+                margin-bottom: 1em;
+                @include media.small{
+                    font-size: $content-font-size/1.3;
+                }
+                @include media.extra-small{
+                    font-size: $content-font-size/1.5;
+                }
+            }
+        }
+        .ver{
+            display: none;
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+
+}

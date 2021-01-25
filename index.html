@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ale & Juli</title>
+    <link rel="icon" href="./img/icon_web.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/93f40567e9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="page">
+        <div id="left">
+            <div class="bg-effect">
+                <div class="stars"></div>
+                <div class="star2"></div>
+                <div class="star3"></div>
+            </div>
+            <div class="card" id="card-left">
+                <div class="name">
+                    <p>Alexandra</p>
+                </div>
+                <div class="content">
+                    <div class="day-hour">
+                        <div id="spain-day" class="day"></div>
+                        <div id="spain-hour" class="hour"></div> <span>:</span>
+                        <div id="spain-minute" class="minute"></div> <span>:</span>
+                        <div id="spain-second" class="second"></div>
+                        <div id="spain-symbol" class="symbol"></div>
+                    </div>
+                    <div id="spain-date" class="date"></div>
+                </div>
+                <div class="ver" id="ver-left">
+                   <a href="#"><span><i class="fas fa-angle-double-left"></i></span> Ver clima</a> 
+                </div>
+            </div>
+            <div class="weather-card">
+                <div id="sab-temp"></div>
+                <div id="sab-humidity"></div>
+            </div>
+            
+        </div>
+        <div id="right">
+            <div class="bg-effect">
+                <div class="stars"></div>
+                <div class="star2"></div>
+                <div class="star3"></div>
+            </div>
+            <div class="card" id="card-right">
+                <div class="name">
+                    <p>Julian</p>
+                </div>
+                <div class="content">
+                    <div class="day-hour">
+                        <div id="colombia-day" class="day"></div>
+                        <div id="colombia-hour" class="hour"></div> <span>:</span>
+                        <div id="colombia-minute" class="minute"></div> <span>:</span>
+                        <div id="colombia-second" class="second"></div>
+                        <div id="colombia-symbol" class="symbol"></div>
+                    </div>
+                    <div id="colombia-date" class="date"></div>
+                </div>
+                <div class="ver" id="ver-right">
+                    <a href="#">Ver clima <span><i class="fas fa-angle-double-right"></i></span> </a> 
+                 </div>
+            </div>
+            <div class="weather-card" id="weather-card-right">
+                <div id="close-right-icon" class="close"><i class="far fa-times-circle"></i></div>
+                <div id="flo-temp">&#x2103;</div>
+                <div id="flo-feels-like"></div>
+                <div id="flo-pressure"></div>
+                <div id="flo-humidity"></div>
+                <div class="flo-wind">
+                    <div id="flo-speed"></div>
+                    <div id="flo-deg"></div>
+                </div>
+                <div class="flo-sun">
+                    <div id="flo-sunrise"></div>
+                    <div id="flo-sunset"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/get_time_zones.js">    </script>
+    <script src="./js/weather.js"></script>
+</body>
+
+</html>

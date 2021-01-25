@@ -1,0 +1,23 @@
+
+@use 'card' as *;
+@use 'layout' as *;
+@use 'wcard' as *;
+@use 'media';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hachi Maru Pop', cursive;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+@include layout;
+@include card;
+@include wcard;
