@@ -46,7 +46,7 @@ document.getElementById("close-left-icon").addEventListener('click', () => {
 function getWeather(id) {
     const apiKey = "f4b64c9359acf2aeb8d39b58178ad67b";
     // const url = `http://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${apiKey}`;
-    const url = `http://api.openweathermap.org/data/2.5/weather?id=${id}&units=metric&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?id=${id}&units=metric&appid=${apiKey}`;
     return url;
 }
 
