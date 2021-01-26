@@ -129,7 +129,12 @@ body {
   position: relative;
   left: 0px;
   bottom: -5px;
-  height: 220px;
+  height: 120px;
+}
+@media (max-width: 868px) {
+  .page #left .photo img {
+    height: 130px;
+  }
 }
 .page #right {
   grid-area: right;
@@ -148,7 +153,27 @@ body {
   position: relative;
   right: -5px;
   bottom: -10px;
-  height: 320px;
+  height: 170px;
+}
+@media (max-width: 868px) {
+  .page #right .photo img {
+    height: 150px;
+  }
+}
+@media (max-width: 680px) {
+  .page #right .photo img {
+    height: 140px;
+  }
+}
+@media (max-width: 470px) {
+  .page #right .photo img {
+    height: 130px;
+  }
+}
+@media (max-width: 320px) {
+  .page #right .photo img {
+    height: 100px;
+  }
 }
 .page #right .photo-ale {
   position: absolute;
@@ -166,7 +191,27 @@ body {
   position: relative;
   right: -20px;
   bottom: -10px;
-  height: 175px;
+}
+@media (max-width: 868px) {
+  .page #right .photo-ale img {
+    height: 105px;
+  }
+}
+@media (max-width: 680px) {
+  .page #right .photo-ale img {
+    height: 98px;
+    right: -10px;
+  }
+}
+@media (max-width: 470px) {
+  .page #right .photo-ale img {
+    height: 91px;
+  }
+}
+@media (max-width: 320px) {
+  .page #right .photo-ale img {
+    height: 70px;
+  }
 }
 
 .card {
@@ -195,6 +240,11 @@ body {
     width: 20em;
   }
 }
+@media (max-width: 680px) {
+  .card {
+    height: 150px;
+  }
+}
 @media (max-width: 470px) {
   .card {
     width: 18em;
@@ -219,14 +269,19 @@ body {
     font-size: 2.7777777778rem;
   }
 }
+@media (max-width: 680px) {
+  .card .name {
+    font-size: 1.6666666667rem;
+  }
+}
 @media (max-width: 470px) {
   .card .name {
-    font-size: 2.5rem;
+    font-size: 1.6129032258rem;
   }
 }
 @media (max-width: 320px) {
   .card .name {
-    font-size: 2rem;
+    font-size: 1.5625rem;
   }
 }
 .card .content {
@@ -243,7 +298,7 @@ body {
 }
 @media (max-width: 680px) {
   .card .content {
-    font-size: 0.8928571429rem;
+    font-size: 0.6944444444rem;
   }
 }
 @media (max-width: 470px) {
@@ -288,7 +343,8 @@ body {
 }
 @media (max-width: 680px) {
   .card .content .date {
-    font-size: 0.9615384615rem;
+    font-size: 0.6944444444rem;
+    margin: 5px 0 0 0;
   }
 }
 @media (max-width: 470px) {
@@ -302,11 +358,16 @@ body {
 .card .ver a {
   text-decoration: none;
 }
+@media (max-width: 680px) {
+  .card .ver a {
+    font-size: 12px;
+  }
+}
 
 .weather-card {
   z-index: 1;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-bottom-left-radius: 20px;
@@ -317,20 +378,51 @@ body {
   box-shadow: 0 2px 20px rgba(255, 255, 255, 0.54);
   display: none;
 }
+@media (max-width: 1200px) {
+  .weather-card {
+    width: 384.6153846154px;
+  }
+}
+@media (max-width: 868px) {
+  .weather-card {
+    width: 322.5806451613px;
+  }
+}
+@media (max-width: 680px) {
+  .weather-card {
+    height: 120px;
+  }
+}
+@media (max-width: 470px) {
+  .weather-card {
+    width: 277.7777777778px;
+  }
+}
+@media (max-width: 320px) {
+  .weather-card {
+    width: 227.2727272727px;
+  }
+}
 .weather-card .bar {
   z-index: 2;
   position: absolute;
-  top: -30px;
   right: 0;
   cursor: pointer;
   width: 100%;
   height: 30px;
+  top: -30px;
   background: rgba(54, 54, 54, 0.9);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+@media (max-width: 680px) {
+  .weather-card .bar {
+    height: 20px;
+    top: -20px;
+  }
 }
 .weather-card .bar .close {
   margin-right: 10px;
@@ -349,6 +441,11 @@ body {
   color: #000000;
   transition: background-color 0.1s ease;
 }
+@media (max-width: 680px) {
+  .weather-card .bar .close i {
+    font-size: 0.4em;
+  }
+}
 .weather-card .bar .close i:hover {
   background-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
@@ -363,12 +460,42 @@ body {
 .weather-card .weather-card-content .slider {
   z-index: 1;
   position: relative;
-  padding: 0.5em;
+  padding: 0.1em 0.5em;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   background-color: #ffffff;
   border-radius: 10px;
   max-width: 333.3333333333px;
   margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1200px) {
+  .weather-card .weather-card-content .slider {
+    max-width: 277.7777777778px;
+  }
+}
+@media (max-width: 868px) {
+  .weather-card .weather-card-content .slider {
+    max-width: 250px;
+  }
+}
+@media (max-width: 680px) {
+  .weather-card .weather-card-content .slider {
+    height: 90px;
+    margin: 0;
+  }
+}
+@media (max-width: 470px) {
+  .weather-card .weather-card-content .slider {
+    max-width: 208.3333333333px;
+  }
+}
+@media (max-width: 320px) {
+  .weather-card .weather-card-content .slider {
+    max-width: 156.25px;
+  }
 }
 .weather-card .weather-card-content .slider .slider-items {
   overflow: hidden;
@@ -378,6 +505,26 @@ body {
   font-size: 2em;
   text-align: center;
   animation: zoom 0.5s ease;
+}
+@media (max-width: 1200px) {
+  .weather-card .weather-card-content .slider .slider-items .item {
+    font-size: 1.8em;
+  }
+}
+@media (max-width: 868px) {
+  .weather-card .weather-card-content .slider .slider-items .item {
+    font-size: 1.3em;
+  }
+}
+@media (max-width: 680px) {
+  .weather-card .weather-card-content .slider .slider-items .item {
+    font-size: 1.1em;
+  }
+}
+@media (max-width: 320px) {
+  .weather-card .weather-card-content .slider .slider-items .item {
+    font-size: 0.9em;
+  }
 }
 @keyframes zoom {
   0% {
@@ -410,20 +557,25 @@ body {
   cursor: pointer;
   transition: background-color 0.1s ease;
 }
+@media (max-width: 868px) {
+  .weather-card .weather-card-content .left-slide,
+.weather-card .weather-card-content .right-slide {
+    height: 20px;
+    width: 20px;
+    font-size: 12px;
+  }
+}
 .weather-card .weather-card-content .left-slide {
-  left: 30px;
+  left: 10px;
 }
 .weather-card .weather-card-content .right-slide {
-  right: 30px;
+  right: 10px;
 }
 .weather-card .weather-card-content .left-slide:hover,
 .weather-card .weather-card-content .right-slide:hover {
   background: rgba(54, 54, 54, 0.7);
 }
 
-#left .weather-card-content .slider {
-  border: 10px solid #ffffff;
-}
 #left .weather-card-content .slider .item .magnitude {
   color: #000000;
 }
@@ -434,9 +586,6 @@ body {
   display: block;
 }
 
-#right .weather-card-content .slider {
-  border: 10px solid #ffffff;
-}
 #right .weather-card-content .slider .item .magnitude {
   color: #000000;
 }

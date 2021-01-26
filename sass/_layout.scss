@@ -1,6 +1,10 @@
 @use 'stars'as *;
 @use 'media';
 
+$media-width-both :150px;
+$small-width-both :140px;
+$extra-small-width-both :130px;
+$super-small-width-both :100px;
 @mixin layout {
     .page {
         height: 100%;
@@ -59,7 +63,10 @@
                     position: relative;
                     left: 0px;
                     bottom: -5px;
-                    height: 220px;
+                    height: 120px;
+                    @include media.medium{
+                        height: 130px;
+                    }
                 }
 
             }
@@ -86,8 +93,19 @@
                     position: relative;
                     right: -5px;
                     bottom: -10px;
-                    height: 320px;
-
+                    height: 170px;
+                    @include media.medium{
+                        height: $media-width-both;
+                    }
+                    @include media.small{
+                        height: $small-width-both;
+                    }
+                    @include media.extra-small{
+                        height: $extra-small-width-both;
+                    }
+                    @include media.super-small{
+                        height: $super-small-width-both;
+                    }
                 }
 
             }
@@ -105,7 +123,19 @@
                     position: relative;
                     right: -20px;
                     bottom: -10px;
-                    height: 175px;
+                    @include media.medium{
+                        height: $media-width-both*0.7;
+                    }
+                    @include media.small{
+                        height: $small-width-both*0.7;
+                        right: -10px;
+                    }
+                    @include media.extra-small{
+                        height: $extra-small-width-both*0.7;
+                    }
+                    @include media.super-small{
+                        height: $super-small-width-both*0.7;
+                    }
 
                 }
             }

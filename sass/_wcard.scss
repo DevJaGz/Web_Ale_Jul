@@ -1,8 +1,9 @@
 // weather-card = wcard
 @use 'keyframes';
+@use 'media';
 
 $card-width : 500px;
-// $card-height: 400px;
+// $card-height: 200px;
 $card-height:auto;
 $bar-height: 30px;
 $card-border-radius: 20px;
@@ -13,7 +14,7 @@ $inside-card-border-radius: 10px;
     .weather-card {
         z-index: 1;
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
         border-bottom-left-radius: $card-border-radius;
@@ -24,6 +25,26 @@ $inside-card-border-radius: 10px;
         box-shadow: 0 2px 20px rgba($color: #ffffff, $alpha: .54);
         display: none;
 
+        @include media.large {
+            width: $card-width/1.3;
+        }
+
+        @include media.medium {
+            width: $card-width/1.55;
+        }
+
+        @include media.small {
+            height: 120px;
+        }
+
+        @include media.extra-small {
+            width: $card-width/1.8;
+        }
+
+        @include media.super-small {
+            width: $card-width/2.2;
+        }
+
         // div {
         //     border: 1px solid red;
         // }
@@ -31,11 +52,11 @@ $inside-card-border-radius: 10px;
         .bar {
             z-index: 2;
             position: absolute;
-            top: -$bar-height;
             right: 0;
             cursor: pointer;
             width: 100%;
             height: $bar-height;
+            top: -$bar-height;
             background: rgba(54, 54, 54, .9);
             border-top-left-radius: $card-border-radius;
             border-top-right-radius: $card-border-radius;
@@ -43,8 +64,16 @@ $inside-card-border-radius: 10px;
             justify-content: flex-end;
             align-items: center;
 
+            @include media.small {
+                height: $bar-height/1.5;
+                top: -$bar-height/1.5;
+            }
+
             .close {
                 margin-right: $card-border-radius/2;
+
+
+
 
                 i {
                     display: flex;
@@ -59,6 +88,10 @@ $inside-card-border-radius: 10px;
                     background-color: rgba($color: #ffffff, $alpha: .9);
                     color: #000000;
                     transition: background-color .1s ease;
+
+                    @include media.small {
+                        font-size: .4em;
+                    }
                 }
 
                 i:hover {
@@ -79,20 +112,62 @@ $inside-card-border-radius: 10px;
             .slider {
                 z-index: 1;
                 position: relative;
-                padding: .5em;
+                padding: 0.1em .5em;
                 box-shadow: 0 2px 10px rgba($color: #000000, $alpha: .4);
                 background-color: #ffffff;
                 border-radius: $inside-card-border-radius;
                 max-width: $card-width/1.5;
                 margin: 20px auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                @include media.large {
+                    max-width: $card-width/1.8;
+                }
+
+                @include media.medium {
+                    max-width: $card-width/2;
+                }
+
+                @include media.small {
+                    height: 90px;
+                    margin: 0;
+                }
+
+                @include media.extra-small {
+                    max-width: $card-width/2.4;
+                }
+
+                @include media.super-small {
+                    max-width: $card-width/3.2;
+                }
 
                 .slider-items {
                     overflow: hidden;
+
                     .item {
                         display: none;
                         font-size: 2em;
                         text-align: center;
                         animation: zoom .5s ease;
+
+                        @include media.large {
+                            font-size: 1.8em;
+                        }
+
+                        @include media.medium {
+                            font-size: 1.3em;
+                        }
+
+                        @include media.small {
+                            font-size: 1.1em;
+                        }
+
+                        @include media.super-small {
+                            font-size: .9em;
+                        }
 
                         @include keyframes.zoom {
                             0% {
@@ -108,7 +183,6 @@ $inside-card-border-radius: 10px;
 
                         span {
                             font-size: .7em;
-
                         }
                     }
 
@@ -132,14 +206,20 @@ $inside-card-border-radius: 10px;
                 text-align: center;
                 cursor: pointer;
                 transition: background-color .1s ease;
+
+                @include media.medium {
+                    height: 20px;
+                    width: 20px;
+                    font-size: 12px;
+                }
             }
 
             .left-slide {
-                left: 30px;
+                left: 10px;
             }
 
             .right-slide {
-                right: 30px;
+                right: 10px;
             }
 
             .left-slide:hover,
@@ -150,11 +230,12 @@ $inside-card-border-radius: 10px;
         }
 
     }
+
     #left {
         .weather-card-content {
 
             .slider {
-                border: 10px solid #ffffff;
+                // border: 10px solid #ffffff;
 
                 // .slider-bg{
                 //     position: absolute;
@@ -176,8 +257,9 @@ $inside-card-border-radius: 10px;
                     .caption {
                         color: #000000;
                     }
-                    
+
                 }
+
                 .active-left {
                     display: block;
                 }
@@ -192,7 +274,7 @@ $inside-card-border-radius: 10px;
         .weather-card-content {
 
             .slider {
-                border: 10px solid #ffffff;
+                // border: 10px solid #ffffff;
 
                 // .slider-bg{
                 //     position: absolute;
@@ -214,8 +296,9 @@ $inside-card-border-radius: 10px;
                     .caption {
                         color: #000000;
                     }
-                    
+
                 }
+
                 .active-right {
                     display: block;
                 }

@@ -26,7 +26,7 @@ document.getElementById("ver-right").addEventListener('click', () => {
 //CLOSE
 document.getElementById("close-right-icon").addEventListener('click', () => {
     document.getElementById("weather-card-right").style.display = 'none';
-    document.getElementById('card-right').style.display = 'inline';
+    document.getElementById('card-right').style.display = 'flex';
 });
 
 // LEFT WEATHER INFO
@@ -38,7 +38,7 @@ document.getElementById("ver-left").addEventListener('click', () => {
 //CLOSE
 document.getElementById("close-left-icon").addEventListener('click', () => {
     document.getElementById("weather-card-left").style.display = 'none';
-    document.getElementById('card-left').style.display = 'inline';
+    document.getElementById('card-left').style.display = 'flex';
 });
 
 
