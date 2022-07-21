@@ -8,13 +8,32 @@
     <link rel="icon" href="./img/icon_web.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/93f40567e9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
     <div class="page">
+        <!-- <audio controls autoplay loop id="song">
+            <source src="./audio/stand_by_me.mp3" type="audio/mpeg">
+        </audio> -->
+        <div class="song-controls" id="songControls">
+            <i id="volumUpIcon" class="fa fa-volume-up hide" aria-hidden="true"></i>
+            <i id="volumDownIcon" class="fa fa-volume-down hide" aria-hidden="true"></i>
+        </div>
+        <div class="modal-song" id="modalSong">
+            <div class="modal-song-container">
+                <div class="text">
+                    ¿Quieres oir algo?
+                </div>
+                <div class="buttons">
+                    <button type="button" data-action="no">No</button>
+                    <button type="button" data-action="yes">Si</button>
+                </div>
+            </div>
+        </div>
         <div id="left">
             <div class="bg-effect">
                 <div class="stars"></div>
@@ -41,7 +60,7 @@
             </div>
             <div class="weather-card" id="weather-card-left">
                 <div class="bar">
-                    <div  class="close">
+                    <div class="close">
                         <i id="close-left-icon" class="fas fa-times"></i>
                     </div>
                 </div>
@@ -51,7 +70,7 @@
                         <div class="slider-items" id="slider-items-left">
                             <div class="item active-left">
                                 <div class="caption">
-                                    <strong>Temperatura</strong> 
+                                    <strong>Temperatura</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="sab-temp"></div>
@@ -59,7 +78,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Sensación térmica</strong> 
+                                    <strong>Sensación térmica</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="sab-feels-like"></div>
@@ -67,7 +86,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Hora con más luz</strong> 
+                                    <strong>Hora con más luz</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="sab-sunrise"></div>
@@ -75,7 +94,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Hora con menos luz</strong> 
+                                    <strong>Hora con menos luz</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="sab-sunset"></div>
@@ -83,7 +102,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Presión</strong> 
+                                    <strong>Presión</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="sab-pressure"></div>
@@ -91,7 +110,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Humedad</strong> 
+                                    <strong>Humedad</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="sab-humidity"></div>
@@ -99,7 +118,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Velocidad del viento</strong> 
+                                    <strong>Velocidad del viento</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="sab-speed"></div>
@@ -107,7 +126,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Dirección del viento</strong> 
+                                    <strong>Dirección del viento</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="sab-deg"></div>
@@ -149,7 +168,7 @@
             </div>
             <div class="weather-card" id="weather-card-right">
                 <div class="bar">
-                    <div  class="close">
+                    <div class="close">
                         <i id="close-right-icon" class="fas fa-times"></i>
                     </div>
                 </div>
@@ -159,7 +178,7 @@
                         <div class="slider-items" id="slider-items-right">
                             <div class="item active-right">
                                 <div class="caption">
-                                    <strong>Temperatura</strong> 
+                                    <strong>Temperatura</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="flo-temp"></div>
@@ -167,7 +186,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Sensación térmica</strong> 
+                                    <strong>Sensación térmica</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="flo-feels-like"></div>
@@ -175,7 +194,7 @@
                             </div>
                             <div class="item ">
                                 <div class="caption">
-                                    <strong>Hora con más luz</strong> 
+                                    <strong>Hora con más luz</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="flo-sunrise"></div>
@@ -183,7 +202,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Hora con menos luz</strong> 
+                                    <strong>Hora con menos luz</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="flo-sunset"></div>
@@ -191,7 +210,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Presión</strong> 
+                                    <strong>Presión</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="flo-pressure"></div>
@@ -199,7 +218,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Humedad</strong> 
+                                    <strong>Humedad</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="flo-humidity"></div>
@@ -207,7 +226,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Velocidad del viento</strong> 
+                                    <strong>Velocidad del viento</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="flo-speed"></div>
@@ -215,7 +234,7 @@
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <strong>Dirección del viento</strong> 
+                                    <strong>Dirección del viento</strong>
                                 </div>
                                 <div class="magnitude">
                                     <div id="flo-deg"></div>
@@ -239,6 +258,7 @@
     <script src="./js/weather.js"></script>
     <script src="./js/slider_left.js"></script>
     <script src="./js/slider_right.js"></script>
+    <script src="./js/audio.js" defer></script>
 </body>
 
 </html>

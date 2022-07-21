@@ -3,6 +3,7 @@
 @use 'layout' as *;
 @use 'wcard' as *;
 @use 'media';
+@use 'modal-song' as *;
 
 
 * {
@@ -17,7 +18,12 @@ body {
     height: 100%;
 }
 
+.hide{
+    display: none !important;
+}
+
 
 @include layout;
 @include card;
+@include wcard;
 @include wcard;

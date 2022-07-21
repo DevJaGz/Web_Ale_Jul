@@ -24,6 +24,14 @@ $super-small-width-both :100px;
         //     border: 1px solid red;
         // }
 
+        audio{
+            position:absolute;
+            top: 54px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
         #left,
         #right {
             display: flex;
