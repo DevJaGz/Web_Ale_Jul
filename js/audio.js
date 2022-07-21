@@ -1,4 +1,5 @@
-let audio = new Audio('/audio/stand_by_me.mp3');
+// let audio = new Audio('/audio/stand_by_me.mp3');
+const audio = document.getElementById('song')
 audio.loop = true;
 
 window.addEventListener('storage', () => {
