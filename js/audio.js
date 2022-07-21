@@ -2,9 +2,15 @@
 // let audio = new Audio('/audio/stand_by_me.mp3');
 // audio.resume();
 // audio.play();
+window.addEventListener('storage', () => {
+    suspendSong()
+    iconsForSongSupend();
+}, false)
+
+localStorage.setItem('Sentinel',Math.random())
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var source = audioCtx.createBufferSource();
 window.addEventListener('load', function () {
-    var source = audioCtx.createBufferSource();
     var xhr = new XMLHttpRequest();
     xhr.open('GET', './audio/stand_by_me.mp3');
     xhr.responseType = 'arraybuffer';
@@ -16,8 +22,8 @@ window.addEventListener('load', function () {
                     source.connect(audioCtx.destination);
                     source.loop = true;
                 });
-        source.start(0);
-        audioCtx.suspend();
+        // source.start(0);
+        // audioCtx.suspend();
         source.loop = true;
     });
     xhr.send();
@@ -54,6 +60,7 @@ modalSong.addEventListener('click', (event) => {
         iconsForSongSupend();
     }else if (event.target.matches('[data-action="yes"]')){
         closeModal();
+        startSong();
         resumeSong();
         iconsForSongResume();
     }
@@ -74,6 +81,10 @@ songControls.addEventListener('click', (event) => {
 
 const closeModal = () => {
     modalSong.classList.add('hide');
+}
+
+const startSong = () => {
+    source.start(0);
 }
 
 const resumeSong = () => {
