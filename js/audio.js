@@ -22,11 +22,11 @@ const songControls = document.getElementById('songControls');
 const volumUpIcon = document.getElementById('volumUpIcon');
 const volumDownIcon = document.getElementById('volumDownIcon');
 
-window.addEventListener('load', function () {
-    this.setTimeout(()=> {
-        modalSong.classList.add('hide');
-    }, 10000)
-});
+// window.addEventListener('load', function () {
+//     this.setTimeout(()=> {
+//         modalSong.classList.add('hide');
+//     }, 10000)
+// });
 
 modalSong.addEventListener('click', (event) => {
     if(!event.target.closest(".modal-song-container") | event.target.matches('[data-action="no"]')) {
@@ -52,12 +52,20 @@ songControls.addEventListener('click', (event) => {
     event.stopPropagation();
 })
 
-const playSong = () => {
-    audio.play();
+const playSong = async () => {
+    try {
+        await audio.play();
+    } catch (error) {
+        console.error('Can not Play the song', error);
+    }
 }
 
 const pauseSong = () => {
-    audio.pause();
+    try {
+        audio.pause();
+    } catch (error) {
+        console.error('Can not Pause the song', error);
+    }
 }
 
 const closeModal = () => {
